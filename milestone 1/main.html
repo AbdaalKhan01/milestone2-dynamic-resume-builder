@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #333;
+    }
+
+    .resume-builder {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2575fc;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #6a11cb;
+      margin-bottom: 1rem;
+    }
+
+    form section {
+      margin-bottom: 1.5rem;
+    }
+
+    form label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+      font-weight: bold;
+      color: #444;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #6a11cb;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #2575fc;
+    }
+
+    .resume-output {
+      margin-top: 2rem;
+      text-align: left;
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-builder">
+    <h1>Interactive Resume Builder</h1>
+    <form id="resumeForm">
+      <!-- Personal Details Section -->
+      <section>
+        <h2>Personal Details</h2>
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+      </section>
+
+      <!-- Education Section -->
+      <section>
+        <h2>Education</h2>
+        <label for="education">Highest Degree</label>
+        <input type="text" id="education" placeholder="Enter your degree" required>
+
+        <label for="institute">Institute</label>
+        <input type="text" id="institute" placeholder="Enter your institute name" required>
+
+        <label for="year">Year of Graduation</label>
+        <input type="number" id="year" placeholder="Year" required>
+      </section>
+
+      <!-- Experience Section -->
+      <section>
+        <h2>Experience</h2>
+        <label for="jobTitle">Job Title</label>
+        <input type="text" id="jobTitle" placeholder="Enter your job title">
+
+        <label for="company">Company</label>
+        <input type="text" id="company" placeholder="Enter your company name">
+
+        <label for="duration">Duration</label>
+        <input type="text" id="duration" placeholder="Enter duration (e.g., 2020-2023)">
+
+        <label for="responsibilities">Responsibilities</label>
+        <textarea id="responsibilities" placeholder="Describe your responsibilities"></textarea>
+      </section>
+
+      <!-- Skills Section -->
+      <section>
+        <h2>Skills</h2>
+        <label for="skills">Skills (comma separated)</label>
+        <input type="text" id="skills" placeholder="e.g., HTML, CSS, JavaScript">
+      </section>
+
+      <button type="button" id="generateResume">Generate Resume</button>
+    </form>
+
+    <!-- Resume Output -->
+    <div id="resumeOutput" class="resume-output hidden">
+      <h2>Your Resume</h2>
+      <div id="outputContent"></div>
+      <button id="editResume">Edit</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
